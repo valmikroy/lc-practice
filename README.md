@@ -46,5 +46,18 @@
   end
   ```
 
-- 
+- To define uniqness of the array, you should sort and compare.
+
+- Delete element from an array 
+
+  ```ruby
+  # delete by value, NOTE this can delete duplicate values
+  new_set = set - [i]
+  
+  
+  # delete by index, it return deleted value and modifies the array 
+  set.delete_at(i)
+  ```
+
+  
 
