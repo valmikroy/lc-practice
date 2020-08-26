@@ -59,5 +59,25 @@
   set.delete_at(i)
   ```
 
+- zero initialized array which will grow as you push elements inside it.
+
+  ```ruby
+  Array.new(123, 0) 
+  ```
+
+- In ruby following does not work 
+
+  ```ruby
+  idx++ # does not work
+  idx -= 1 	
+  ```
+
   
+
+
+
+### Exercise 
+
+- matrices multiplication
+- regular integer multiplication 
 
