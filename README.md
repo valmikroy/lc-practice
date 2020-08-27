@@ -102,12 +102,19 @@
   puts x.call(1)
   ```
 
+- Regex matching ruby 
+
+  ```ruby
+  c.match(/[a-z0-9]/
+  ```
+
   
 
 ### Tips
 
 - look at input and output carefully while reading the problem.
 - Do not forget to calculate time and space complexity 
+- Make sure you attach a `!` 
 
 ### Exercise 
 
