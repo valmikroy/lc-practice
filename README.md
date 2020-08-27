@@ -104,10 +104,14 @@
 
   
 
+### Tips
 
+- look at input and output carefully while reading the problem.
+- Do not forget to calculate time and space complexity 
 
 ### Exercise 
 
 - matrices multiplication
 - regular integer multiplication 
+- Log(n) in O notation
 
