@@ -72,6 +72,36 @@
   idx -= 1 	
   ```
 
+- Splice of an array 
+
+  ```ruby
+  [1, 2, 3, 4, 5].splice(1, 3)
+  // [2, 3, 4]
+  ```
+
+- Simple closure 
+
+  ```ruby
+  def form_close
+  
+    d = 100
+  
+    return lambda  do |c|
+  
+      d = d + c
+  
+    end
+  
+  end
+  
+  
+  x = form_close
+  
+  puts x.call(1)
+  puts x.call(1)
+  puts x.call(1)
+  ```
+
   
 
 
