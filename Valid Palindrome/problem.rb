@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 #
 
 =begin
@@ -57,7 +57,7 @@ def  is_palindrome(s)
   return false
 end
 
-x = "A man, a plan, a canal: Panama"
+x =  "race a car"
 puts "Plindrome" if is_palindrome(x)
 
 
