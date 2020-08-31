@@ -114,11 +114,13 @@
 
 - look at input and output carefully while reading the problem.
 - Do not forget to calculate time and space complexity 
-- Make sure you attach a `!` 
+- Make sure you attach a `!` to some of the string manipulation functions
+- Write down logic in systematic format in the comment  section  
 
 ### Exercise 
 
 - matrices multiplication
 - regular integer multiplication 
-- Log(n) in O notation
+- Log(n) in O notation - how this happens
+- figure out mathematical notation to represent range of the array 
 
