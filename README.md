@@ -108,6 +108,24 @@
   c.match(/[a-z0-9]/
   ```
 
+- Spaceship 
+
+  ```ruby
+  case a <=> b
+  when -1
+    "a < b"
+  when 0
+    "a == b "
+  when 1
+    "a > b"
+  else
+    "Unknown"
+  end  
+  
+  ```
+
+  
+
 
 
 
@@ -122,6 +140,12 @@
 | Linked List    | O(n)   | O(n)   | O(1)      | O(1)     |
 
 
+
+The time required to remove the item from the linked list depends on how exactly we a going to do this. Here are possibilities:
+
+- Remove by value. In this case we need to find an item (*O(n)*) and remove it (*O(1)*). The total time is *O(n)*.
+- Remove by index. In this case we need to traverse list (*O(index)*) and remove item (*O(1)*). The total time is *O(index)*. For arbitrary index it is *O(n)*.
+- Remove by the reference to the linked list node that contains the item *O(1)*.
 
 
 
