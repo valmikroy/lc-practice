@@ -108,7 +108,24 @@
   c.match(/[a-z0-9]/
   ```
 
-  
+
+
+
+
+### Linked List
+
+
+
+| Data Structure | Access | Search | Insertion | Deletion |
+| -------------- | ------ | ------ | --------- | -------- |
+| Array          | O(1)   | O(n)   | O(n)      | O(n)     |
+| Linked List    | O(n)   | O(n)   | O(1)      | O(1)     |
+
+
+
+
+
+
 
 ### Tips
 
@@ -116,6 +133,7 @@
 - Do not forget to calculate time and space complexity 
 - Make sure you attach a `!` to some of the string manipulation functions
 - Write down logic in systematic format in the comment  section  
+-  we have to careful about carryover , if no carry over in current cycle then do not forget to reset it. carry over in the last addition has to be considred
 
 ### Exercise 
 
