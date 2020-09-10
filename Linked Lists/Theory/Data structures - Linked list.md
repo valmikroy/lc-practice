@@ -26,3 +26,15 @@ Doubly linked list
 
 
 
+Queues and stack 
+
+- Linked list can be used to create Queues and Stacks. Where you can manipulate head and tail pointers to provide FIFO and LIFO kind of fucntionality. But with ruby I will use just push and shift on the array.
+
+
+
+
+
+
+
+
+

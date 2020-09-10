@@ -151,6 +151,14 @@ The time required to remove the item from the linked list depends on how exactly
 
 
 
+### Recursion
+
+- If recursive function - always think in terms of its inputs and what output you are getting.
+- recursive function with no output is much easier to implement.
+- If recursive function is returning an output then you have to accomodate the procesing of that output.
+
+
+
 ### Tips
 
 - look at input and output carefully while reading the problem.
@@ -165,4 +173,5 @@ The time required to remove the item from the linked list depends on how exactly
 - regular integer multiplication 
 - Log(n) in O notation - how this happens
 - figure out mathematical notation to represent range of the array 
+- work on set [theory using array](https://medium.com/amiralles/mastering-data-structures-in-ruby-sets-5d674169cd2d) 
 
