@@ -156,6 +156,12 @@ The time required to remove the item from the linked list depends on how exactly
 - If recursive function - always think in terms of its inputs and what output you are getting.
 - recursive function with no output is much easier to implement.
 - If recursive function is returning an output then you have to accomodate the procesing of that output.
+- if you have a series of numbers or elements which can be stacked then recursion's end condition could be if stack is empty 
+- recursion allows you to take a serial input 
+  - and split that into smaller chunks. 
+  - then work on smallest chunk , gather output 
+  - pass that output to one layer up and utilize it to work on next chunk.
+- 
 
 
 
