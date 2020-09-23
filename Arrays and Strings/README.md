@@ -39,5 +39,12 @@
   end
   ```
 
+- Hash sort by key
+
+  ```ruby
+  metrics = {"sitea.com" => 745, "siteb.com" => 9, "sitec.com" => 10 }
+  metrics.sort_by { |_k,v| v }.reverse.to_h.each { |k,v| puts v }
+  ```
+
   
 
