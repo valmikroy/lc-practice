@@ -22,4 +22,22 @@
   end
   ```
 
-- Has element.
+- Code snip Map
+
+  ```ruby
+  a = [1 , 2 ,3 ,4, 5]
+  b = a.map{ |n| n**2 }        # stores squares of all number in b
+  c = a.select{|n| n%2 == 0 }  # selects even numbers in c
+  ```
+
+- Redo
+
+  ```ruby
+  10.times do |i|
+    puts "Iteration #{i}"
+    redo if i > 2
+  end
+  ```
+
+  
+
