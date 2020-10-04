@@ -102,7 +102,7 @@ end
 #### Leedcode glue
 Glue code which LC provides for the binary tree
 
-```
+```ruby
 #!/usr/bin/env ruby
 #
 
