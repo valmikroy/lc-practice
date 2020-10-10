@@ -46,5 +46,31 @@
   metrics.sort_by { |_k,v| v }.reverse.to_h.each { |k,v| puts v }
   ```
 
+- Break out of all loops 
+
+  ```ruby
+  catch :break_out do
+  
+  	input.each_with_index do |e1,i|
+  		input.each_with_index do |e2,j|
+  			next if i == j
+  			if e1+e2 == target	
+  				output = [ i, j ]
+  				p output
+  				throw :break_out
+  			end
+  		end
+  	end 
+  
+  end
+  ```
+
+- Padding in array 
+
+  ```ruby
+  b1 = Array.new((15-a.split(//).length),0).push(a.split(//)).flatten
+  b2 = Array.new((15-b.split(//).length),0).push(b.split(//)).flatten
+  ```
+
   
 

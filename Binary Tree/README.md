@@ -24,71 +24,57 @@ All Depth first parsings are 0(N) for both space and time.
 
 
 
-#### Tree defination 
+#### Tree structure and level order insertion
 
 ```ruby
-# Definition for a binary tree node.
-# class TreeNode
-#     attr_accessor :val, :left, :right
-#     def initialize(val = 0, left = nil, right = nil)
-#         @val = val
-#         @left = left
-#         @right = right
-#     end
-# end
-# @param {TreeNode} root
-# @return {Integer[]}
-```
-
-
-
-
-
-#### Postorder
-
-```ruby
-def postorder_traversal(root)
-        return [] if root.nil?
-        return postorder_traversal(root.left) + 
-               postorder_traversal(root.right) + 
-               [root.val]
+class TreeNode
+     attr_accessor :val, :left, :right
+     def initialize(val = 0, left = nil, right = nil)
+         @val = val
+         @left = left
+         @right = right
+     end
 end
 ```
 
-
-
-#### Preorder 
+You can ingest level order tree 
 
 ```ruby
-def preorder_traversal(root)
-    return [] if root.nil?
-    return [root.val] + 
-           preorder_traversal(root.left) +
-           preorder_traversal(root.right)    
+def level_order_input_insert(arr)
+   root = TreeNode.new(arr[0]) 
+   helper([root],arr,1) 
+   return root 
 end
+
+def helper(nodes,arr,ptr)
+    next_nodes=[]
+    return if arr.length == ptr    
+    while nodes.length != 0 do
+        n = nodes.shift
+        n.left = TreeNode.new(arr[ptr])
+        ptr +=1
+        return if arr.length == ptr    
+        
+        n.right = TreeNode.new(arr[ptr])
+        ptr +=1
+        next_nodes.push(n.left,n.right)
+        return if arr.length == ptr    
+    end    
+    helper(next_nodes,arr,ptr)
+end
+
+a = [1, 2, 3, 4, 5, 6]
+root = level_order_input_insert(a)
+
+
 ```
 
-
-
-#### Inorder
-
-```ruby
-def inorder_traversal(root)
-        return [] if root.nil?
-        return inorder_traversal(root.left) + 
-               [root.val]  + 
-               inorder_traversal(root.right) 
-end
-```
-
-
-
-#### Breadth first
+Output  same tree in the level order fashion 
 
 ```ruby
 def level_order(root)
     return [] if root.nil?
-    traverse([root],[])
+    traverse([root],[]).flatten  
 end
 
 def traverse(nodes, results)
@@ -97,7 +83,60 @@ def traverse(nodes, results)
   next_level_nodes = nodes.map{ |n| [n.left, n.right]}.flatten.compact 
   traverse(next_level_nodes,results)  
 end
+
 ```
+
+
+
+
+
+#### Other Depth first traversing
+
+- Post
+
+  ```ruby
+  def dfs_post(root)
+      return [] if root.nil?
+      
+      return  dfs_post(root.left) + 
+              dfs_post(root.right) +
+              [ root.val ]
+  end
+  ```
+
+- Pre
+
+  ```ruby
+  def dfs_pre(root)
+    return [] if root.nil?
+  
+    return [ root.val ] +
+           dfs_pre(root.left) +
+           dfs_pre(root.right)   
+  end
+  ```
+
+- Inorder
+
+  ```ruby
+  def dfs_in(root)
+    return [] if root.nil?
+  
+    return dfs_in(root.left) +
+           [ root.val ] +
+           dfs_in(root.right)   
+  end
+  ```
+
+  
+
+
+
+
+
+
+
+
 
 
 
