@@ -86,6 +86,82 @@ end
 
 ```
 
+#### Leedcode glue
+Glue code which LC provides for the binary tree
+
+```ruby
+#!/usr/bin/env ruby
+#
+
+class TreeNode
+     attr_accessor :val, :left, :right
+     def initialize(val = 0, left = nil, right = nil)
+         @val = val
+         @left = left
+         @right = right
+     end
+end
+
+
+# push function
+def pushNode(node, val)
+    return if val.nil?
+    if(val > node.val)
+     if(node.right)
+      pushNode(node.right, val)
+     else
+      node.right = TreeNode.new(val)
+     end
+    else
+     if(node.left)
+      pushNode(node.left, val)
+     else
+      node.left = TreeNode.new(val)
+     end
+    end
+end
+
+# traverse functions
+def postorder_traversal(root)
+        return [] if root.nil?
+        return postorder_traversal(root.left) +
+               postorder_traversal(root.right) +
+               [root.val]
+end
+
+
+def preorder_traversal(root)
+    return [] if root.nil?
+    return [root.val] +
+           preorder_traversal(root.left) +
+           preorder_traversal(root.right)
+end
+
+
+def inorder_traversal(root)
+        return [] if root.nil?
+        return inorder_traversal(root.left) +
+               [root.val]  +
+               inorder_traversal(root.right)
+end
+
+
+# your leetcode input
+#arr = [5,6,2,4,1,8,7,9,3];
+arr = [5,1,4,nil,nil,3,6]
+
+
+root = TreeNode.new(arr.shift);
+arr.each{|e| pushNode(root, e) }
+
+
+
+
+p postorder_traversal(root)
+p inorder_traversal(root)
+p preorder_traversal(root)
+```
+
 
 
 
