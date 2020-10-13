@@ -284,4 +284,143 @@ end
 ![Image for post](../assets/binary_tree_o_notations.png)
 
 
+# Tree traverse
 
+```ruby
+#!/usr/bin/env ruby
+
+require 'pp'
+
+input=[
+    [1,2,3,4],    
+    [5,6,7,8],    
+    [9,10,11,12]    
+]
+
+def explore(x,y,grid)
+    
+    x_max = grid[0].length - 1 
+    y_max = grid.length - 1
+    
+    # co
+    puts grid[y][x]
+   
+    neigh = []
+    
+  
+  # While implementing DFS you have to have 
+  # - seen  (this will do recursion depth tracking)
+  # - track (this will track end results)
+    if x+1 <= x_max 
+       neigh.push(grid[y][x+1]) 
+    end
+
+    if x-1 >= 0
+       neigh.push(grid[y][x-1]) 
+    end
+    
+    if y+1 <= y_max 
+       neigh.push(grid[y+1][x]) 
+    end
+
+    if y-1 >= 0
+       neigh.push(grid[y-1][x]) 
+    end
+
+  
+  
+  
+    return neigh
+
+end
+
+
+def dfs(input)
+    x_max = input[0].length - 1 
+    y_max = input.length - 1
+
+    (0..y_max).each do |y| 
+        (0..x_max).each do |x|
+            pp explore(x,y,input)
+        end 
+    end
+end
+
+dfs(input)
+```
+
+
+```ruby
+#!/usr/bin/env ruby
+
+
+input=[[1,0,2,0,1],[0,0,0,0,0],[0,0,1,0,0]]
+
+def dfs(grid)
+
+end
+
+def explore(x,y,grid,step_cnt,tracker)
+    return if tracker.keys.length == 3   
+    
+    x_max =  grid[0].length - 1
+    y_max =  grid.length - 1
+    
+    
+    if x+1 < x_max
+        puts grid[2][0]
+
+        if grid[x+1][y] == 0
+            step_cnt += 1
+            explore(x+1,y,grid,step_cnt,tracker) 
+        elsif grid[x+1][y] == 1
+           key = "#{x+1}-#{y}"
+           tracker[key] = step_cnt + 1
+           return 
+        end
+    end
+    
+    if x-1 > 0
+        if grid[x-1][y] == 0
+            step_cnt += 1
+            explore(x-1,y,grid,step_cnt,tracker) 
+        elsif grid[x+1][y] == 1
+           key = "#{x-1}-#{y}"
+           tracker[key] = step_cnt + 1
+           return 
+        end
+    end
+    
+
+    if y+1 < y_max
+        if grid[x][y+1] == 0
+            step_cnt += 1
+            explore(x,y+1,grid,step_cnt,tracker) 
+        elsif grid[x][y+1] == 1
+           key = "#{x}-#{y+1}"
+           tracker[key] = step_cnt + 1
+           return 
+        end
+    end
+    
+    if y-1 > 0
+        if grid[x][y-1] == 0
+            step_cnt += 1
+            explore(x,y-1,grid,step_cnt,tracker) 
+        elsif grid[x][y-1] == 1
+           key = "#{x}-#{y-1}"
+           tracker[key] = step_cnt + 1
+           return 
+        end
+    end
+    
+    return
+     
+end
+
+tracker = {}
+
+explore(1,0,input,0,tracker)
+
+p tracker
+```
