@@ -281,22 +281,7 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-![Image for post](/Users/abhisawa/git/lc-practice/lc-practice/assets/binary_tree_o_notations.png)
+![Image for post](../assets/binary_tree_o_notations.png)
 
 
 
