@@ -424,3 +424,32 @@ explore(1,0,input,0,tracker)
 
 p tracker
 ```
+
+#### combination of paths
+If you want to bubble up the value from the base case.
+
+```ruby
+def matrix(x,y)
+    
+max_x = 7
+max_y = 3
+
+    if x == max_x && y == max_y
+        return 1
+    end
+    
+    xx = yy = 0
+    
+    if x+1 <= max_x
+        xx = matrix(x+1,y) 
+    end
+    
+    if y+1 <= max_y
+        yy = matrix(x,y+1) || 0
+    end
+    
+    return xx + yy 
+end
+
+p matrix(1,1)
+```
