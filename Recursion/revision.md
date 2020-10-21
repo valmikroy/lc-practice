@@ -50,6 +50,7 @@ def helper(x,y,matrix,stack)
     max_x = matrix[0].length - 1 
     max_y = matrix.length - 1
     
+    # Swapping of below if statements will convert DFS to BFS
     if x+1 <= max_x
        helper(x+1,y,matrix,stack) 
     end
