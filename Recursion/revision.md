@@ -63,3 +63,36 @@ end
 
 serialize(matrix)
 ```
+
+#### Permutation and Combination 
+
+```ruby
+# permutation and combination
+
+nums = ['A','B','C','D','E']
+
+
+def permute(nums)
+  out = []  
+  helper(nums,0,out)  
+  return out  
+end
+
+
+def helper(nums,idx,out)
+    out.push(nums.clone) if idx == nums.length   
+    (idx ... nums.length).each do |i|
+        nums[i],nums[idx] = nums[idx],nums[i]
+        helper(nums,idx+1,out)
+        nums[i],nums[idx] = nums[idx],nums[i]
+    end
+end
+
+out = permute(nums)
+
+combo = []
+out.each {|x| combo.push("#{x[0]}#{x[1]}") unless combo.include?("#{x[0]}#{x[1]}") }
+
+puts combo
+
+```
