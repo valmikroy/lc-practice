@@ -21,3 +21,44 @@ end
 p climbing_stairs(10)
 ```
 
+
+#### Traversing through the matrix using recursion 
+
+```ruby
+#!/usr/bin/env ruby
+
+matrix = [
+    [ 1, 2, 3, 4, 5],
+    [ 6, 7, 8, 9,10],
+    [11,12,13,14,15],  
+    [16,17,18,19,20],
+    [21,22,23,24,25]
+]
+
+
+def serialize(matrix)
+    stack = []
+    helper(0,0,matrix,stack)
+    puts "#{stack}"
+end
+
+def helper(x,y,matrix,stack)
+    
+    element = matrix[y][x] 
+    stack.push(element) unless stack.include?(element)
+    
+    max_x = matrix[0].length - 1 
+    max_y = matrix.length - 1
+    
+    if x+1 <= max_x
+       helper(x+1,y,matrix,stack) 
+    end
+    
+    if y+1 <= max_y
+       helper(x,y+1,matrix,stack) 
+    end
+    
+end
+
+serialize(matrix)
+```
