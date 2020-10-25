@@ -72,5 +72,25 @@
   b2 = Array.new((15-b.split(//).length),0).push(b.split(//)).flatten
   ```
 
+- When you delete an element from an array 
+I face this problem with 3Sum, where you are deleting twice from same array by an index, make sure that you do check index value shift. 
+
+
+```ruby
+        n.delete_at(inc)
+        n.delete_at(dec-1) if inc < dec
+        n.delete_at(dec) if inc > dec
+```
+
+- owning counter decrement
+When you own the counter increment or decrement and make sure you do that before calling `next` condition
+```ruby
+       while dec >= 0 do 
+         if dec == inc
+           dec -=1
+           next  
+         end
+      end 
+```
   
 
